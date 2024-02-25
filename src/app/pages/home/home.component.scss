@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 24px;
+    max-width: 100%;
+    margin-top: 100px;
+    
+    past-launch-card {
+        width: 600px;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+}

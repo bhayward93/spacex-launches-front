@@ -1,0 +1,10 @@
+@for (item of (launchHistory$ | async); track item.flightNumber) {
+    <past-launch-card
+        [name]="item.name"
+        [success]="item.success"
+        [flightNumber]="item.flightNumber"
+        [failures]="item.failures"
+        [timestamp]="item.timestamp"
+        [links]="item.links"
+    ></past-launch-card>
+}

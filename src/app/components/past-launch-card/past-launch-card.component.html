@@ -1,0 +1,46 @@
+<div class="pastLaunchCard__header">
+    <h3 class="pastLaunchCard__name" tabindex="0">
+        {{flightNumber}}&nbsp;:&nbsp;{{name}}
+    </h3>
+    <div class="pastLaunchCard__successMarker"
+        [ngClass]="{
+            'pastLaunchCard__successMarker--success': success,
+            'pastLaunchCard__successMarker--failure': !success
+        }">
+    </div>
+</div>
+
+@if (timestamp) {
+    <strong>Date:</strong>&nbsp;&nbsp;<span class="pastLaunchCard__timestamp">{{timestamp * 1000 | date: 'short'}}</span>
+}
+
+<hr/>
+
+@if (failures?.length) {
+    <div class="pastLaunchCard__failuresContainer">
+        <h3>Failure</h3>
+        @for (failure of failures; track failure?.time) {
+            @if (failure.time) {
+                <p><strong>Time:</strong>&nbsp;&nbsp;{{failure.time * 1000 | date: 'short' }}</p>
+            }
+            @if (failure.altitude) {
+                <p><strong>Altitude:</strong>&nbsp;&nbsp;{{failure.altitude}}</p>
+            }
+            @if (failure.reason) {
+                <p><strong>Reason:</strong>&nbsp;&nbsp;{{failure.reason}}</p>
+            }
+        }
+    </div>
+    <hr/>
+}
+
+@if (links) {
+    <div class="pastLaunchCard__links">
+        <h3>Links</h3>
+        <ul>
+            <li><a [href]="links.webcastUrl" target="_blank" rel="nofollow">Webcast</a></li>
+            <li><a [href]="links.articleUrl" target="_blank" rel="nofollow">Article</a></li>
+            <li><a [href]="links.wikipediaUrl" target="_blank" rel="nofollow">Wikipedia</a></li>
+        </ul>
+    </div>
+}

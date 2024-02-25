@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    // background
+    background-color: #131515;
+    opacity: 1;
+    background-image:  radial-gradient(#FFFAFB 2px, transparent 2px), radial-gradient(#FFFAFB 2px, #131515 2px);
+    background-size: 80px 80px;
+    background-position: 0 0,40px 40px;
+    margin: unset;
+
+    // text color
+    color: #FFFAFB;
+
+    // font
+
+    font-family: 'Open Sans', Ubuntu, Verdana, sans-serif;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Ubuntu, Verdana, sans-serif;
+    }
+
+}
